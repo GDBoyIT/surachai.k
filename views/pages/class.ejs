@@ -1,0 +1,28 @@
+<% include ../partials/header %>
+    <div class = "container">
+        <h1>Classroom for this semester</h1>
+        <table class="table table-striped">
+            <thead class = "thead-dark">
+                <tr>
+                    <th>Subject ID</th>
+                    <th>Name</th>
+                    <th>Room</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% classes.forEach(function(cl){ %>
+                    <tr>
+                        <td >
+                            <a href="/classdetail/<%= cl.subject_id %>">
+                                <%= cl.subject_id %></td>
+                            </a>
+                        <td><%= cl.subject_name %></td>
+                        <td><%= cl.room %></td>
+                        <td><a name="" id="" class="btn btn-primary" href="/classedit/<%= cl.subject_id %>" role="button">Edit</a></td>
+                    </tr>
+               <% }); %>               
+            </tbody>
+        </table>
+    </div>
+<% include ../partials/footer %>  
